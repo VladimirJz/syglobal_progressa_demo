@@ -1,0 +1,25 @@
+
+<script>
+    function consultaBODESA()
+    {
+        document.getElementById("id_MontoSolicitado").value=random(100,5000);
+    }
+    function random(min,max)
+{
+    return  Math.floor(Math.random()*(max-min+1))+min;
+
+}
+
+</script>
+<form method="POST">{% csrf_token %}
+{{ form.as_p }}
+<input type="button" value="Consultar Monto" onclick="consultaBODESA()">
+<input type="submit" value="Guardar" >
+
+</form>
+<p>
+    {{ output }}
+    {% for m in output %}
+    m.ErrMen
+    {% endfor %}
+</p>
